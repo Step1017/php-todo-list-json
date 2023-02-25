@@ -10,6 +10,20 @@
     </head>
     <body>
         <div id="app">
+            <div>
+                <h2>Aggiungi To-Do</h2>
+                <form action="create.php" method="POST" @submit.prevent="addTask()">
+                    <div>
+                        <label for="task-name">
+                            Nome del task
+                        </label>
+                        <input type="text" v-model="newTask.taskName" name="task-name" id="task-name" minlength="1" maxlength="64" placeholder="Inserisci il nome del task..." required>
+                    </div>
+                    <button type="submit">
+                        Aggiungi
+                    </button>
+                </form>
+            </div>
             <ul>
                 <!-- Aggiungo classe tramite v bind quando il valore è uguale a true -->
                 <li v-for="(todo, index) in todos">
