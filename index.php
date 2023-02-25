@@ -11,8 +11,13 @@
     <body>
         <div id="app">
             <ul>
+                <!-- Aggiungo classe tramite v bind quando il valore è uguale a true -->
                 <li v-for="(todo, index) in todos">
-                    {{ index + 1 }}. {{ todo.taskName }}
+                    <span :class="{
+                        done:todo.done == true
+                        }">
+                        {{ index + 1 }}. {{ todo.taskName }}
+                    </span>
                 </li>
             </ul>
         </div>
